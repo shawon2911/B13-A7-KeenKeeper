@@ -12,7 +12,7 @@ const Navbar = () => {
         <li>
             <NavLink
              to={"/"}
-             className={({isActive})=> `font-semibold text-xl text-[#64748B] mr-1 ${isActive ? "bg-[#244D3F] text-white rounded-sm" : ""}`}>
+             className={({isActive})=> `font-semibold text-lg text-[#64748B] mr-1 ${isActive ? "bg-[#244D3F] text-white rounded-sm" : ""}`}>
                 <IoHomeOutline />
                 Home
             </NavLink>
@@ -20,7 +20,7 @@ const Navbar = () => {
         <li>
             <NavLink
              to={"/timeline"}
-             className={({isActive})=> `font-semibold text-xl text-[#64748B] mr-1 ${isActive ? "bg-[#244D3F] text-white rounded-sm" : ""}`}>
+             className={({isActive})=> `font-semibold text-lg text-[#64748B] mr-1 ${isActive ? "bg-[#244D3F] text-white rounded-sm" : ""}`}>
                 <CiClock2 />
                 Timeline
             </NavLink>
@@ -28,7 +28,7 @@ const Navbar = () => {
         <li>
             <NavLink
              to={"/stats"}
-             className={({isActive})=> `font-semibold text-xl text-[#64748B] mr-1 ${isActive ? "bg-[#244D3F] text-white rounded-sm" : ""}`}>
+             className={({isActive})=> `font-semibold text-lg text-[#64748B] mr-1 ${isActive ? "bg-[#244D3F] text-white rounded-sm" : ""}`}>
                 <TfiStatsUp />
                 Stats
             </NavLink>
@@ -67,7 +67,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <img src={navLogo} alt="" />
+          <img src={navLogo} className="" alt="" />
         </div>
         <div className="navbar-end hidden lg:flex lg:pr-20">
           <ul className="menu menu-horizontal px-1">
