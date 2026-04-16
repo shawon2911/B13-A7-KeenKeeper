@@ -18,7 +18,7 @@ const Banner = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-7 py-5">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-7 py-5 px-5 lg:px-0">
             <div className="text-center bg-white py-10 shadow-sm rounded-xl">
                 <h3 className="font-semibold text-[32px] text-[#244D3F]">10</h3>
                 <p className="text-[18px] text-[#64748B]">Total Friends</p>
