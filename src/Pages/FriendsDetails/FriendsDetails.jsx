@@ -31,8 +31,8 @@ const FriendsDetails = () => {
   };
   return (
     <div className="bg-[#F8FAFC]">
-      <div className="grid grid-cols-3 gap-5  max-w-7xl mx-auto py-25">
-        <div className="col-span-1 space-y-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5   max-w-7xl mx-auto py-8 md:py-25">
+        <div className="col-span-1 space-y-5 mb-10 md:mb-0">
           <div className="flex flex-col justify-center items-center bg-white py-7 space-y-3 shadow-md rounded-xl">
             <img className="h-15 " src={picture} alt="" />
             <h2 className="font-semibold text-[20px]">{name}</h2>
@@ -62,20 +62,20 @@ const FriendsDetails = () => {
         </div>
 
         <div className="col-span-2 space-y-5">
-          <div className="grid grid-cols-3 gap-5">
-            <div className="text-center bg-white py-10 shadow-sm rounded-xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="text-center bg-white py-5 md:py-10 shadow-sm rounded-xl mx-7 md:mx-0">
               <h3 className="font-semibold text-[32px] text-[#244D3F]">
                 {days_since_contact}
               </h3>
               <p className="text-[18px] text-[#64748B]">Days Since Contact</p>
             </div>
-            <div className="text-center bg-white py-10 shadow-sm rounded-xl">
+            <div className="text-center bg-white py-5 md:py-10 shadow-sm rounded-xl mx-7 md:mx-0">
               <h3 className="font-semibold text-[32px] text-[#244D3F]">
                 {goal}
               </h3>
               <p className="text-[18px] text-[#64748B]">Goal (Days)</p>
             </div>
-            <div className="text-center bg-white py-10 shadow-sm rounded-xl">
+            <div className="text-center bg-white py-5 md:py-10 shadow-sm rounded-xl mx-7 md:mx-0">
               <h3 className="font-semibold text-[32px] text-[#244D3F]">
                 {next_due_date}
               </h3>
