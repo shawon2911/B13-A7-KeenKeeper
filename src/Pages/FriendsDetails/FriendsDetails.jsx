@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BiBellMinus } from "react-icons/bi";
 import { BsArchive } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
 import { GoDeviceCameraVideo } from "react-icons/go";
 import { MdDelete, MdTextsms } from "react-icons/md";
 import { useLoaderData, useParams } from "react-router";
+import { FriendsContext } from "../../Components/Context/FriendsProvider";
 
 const FriendsDetails = () => {
   const { id } = useParams();
@@ -13,6 +14,8 @@ const FriendsDetails = () => {
   // console.log(friends);
   const targetFriends = friends.find((friend) => friend.id == id);
   // console.log(targetFriends);
+  const {handleCommunication} = useContext(FriendsContext);
+
   const {
     name,
     picture,
@@ -24,11 +27,15 @@ const FriendsDetails = () => {
     goal,
     next_due_date,
   } = targetFriends;
+
   const statusClassObj = {
     "on-track": "bg-green-800 px-3 rounded-full text-white",
     "almost due": "bg-[#EFAD44] px-3 rounded-full text-white",
     overdue: "bg-[#EF4444] px-3 rounded-full text-white",
   };
+
+
+
   return (
     <div className="bg-[#F8FAFC]">
       <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5   max-w-7xl mx-auto py-8 md:py-25">
@@ -103,18 +110,18 @@ const FriendsDetails = () => {
               Quick Check-In
             </h3>
             <div className="grid grid-cols-3 gap-5 mt-4">
-              <div className="bg-[#F8FAFC] flex flex-col justify-center items-center py-5 rounded-xl">
+              <button onClick={()=>handleCommunication(targetFriends, "call" )} className=" bg-[#F8FAFC] flex flex-col justify-center items-center py-5 rounded-xl cursor-pointer hover:shadow-md transition">
                 <FiPhoneCall className="font-extrabold text-2xl text-[#1F2937]"></FiPhoneCall>
                 <p className="text-[18px] text-[#1F2937]">Call</p>
-              </div>
-              <div className="bg-[#F8FAFC] flex flex-col justify-center items-center py-5 rounded-xl">
+              </button>
+              <button onClick={()=>handleCommunication(targetFriends, "text")} className="bg-[#F8FAFC] flex flex-col justify-center items-center py-5 rounded-xl cursor-pointer hover:shadow-md transition">
                 <MdTextsms className="font-extrabold text-2xl text-[#1F2937]" />
                 <p className="text-[18px] text-[#1F2937]">Text</p>
-              </div>
-              <div className="bg-[#F8FAFC] flex flex-col justify-center items-center py-5 rounded-xl">
+              </button>
+              <button onClick={()=>handleCommunication(targetFriends, "video")} className="bg-[#F8FAFC] flex flex-col justify-center items-center py-5 rounded-xl cursor-pointer hover:shadow-md transition">
                 <GoDeviceCameraVideo className="font-extrabold text-2xl text-[#1F2937]" />
                 <p className="text-[18px] text-[#1F2937]">Video</p>
-              </div>
+              </button>
             </div>
           </div>
         </div>

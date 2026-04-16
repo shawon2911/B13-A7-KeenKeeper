@@ -1,0 +1,36 @@
+import React from 'react';
+import { AiOutlineMessage } from 'react-icons/ai';
+import { BsCameraReelsFill } from 'react-icons/bs';
+import { IoIosCall } from 'react-icons/io';
+
+const HistoryCard = ({friend}) => {
+    // console.log(friend);
+    const iconSelection = () => {
+        if(friend.type === "call"){
+            <IoIosCall />
+        }
+        else if (friend.type === "text"){
+            <AiOutlineMessage />
+        }
+        else if(friend.type === "video"){
+            <BsCameraReelsFill />
+        }
+    }
+    
+    return (
+        <div className='bg-white flex justify-start items-center gap-5 mt-7 py-3 px-6 rounded-sm shadow-md'>
+            <div>
+                {
+                    iconSelection()
+                }
+            </div>
+
+            <div>
+                <h3><span className='font-medium text-[20px] text-[#244D3F]'>{friend.type}</span> with <span className='text-[18px] text-[#64748B]'>{friend.name}</span></h3>
+                <p className='text-[16px] text-[#64748B]'>{friend.time}</p>
+            </div>
+        </div>
+    );
+};
+
+export default HistoryCard;
