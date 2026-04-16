@@ -6,7 +6,9 @@ import Timeline from "../Pages/Timeline/Timeline";
 import Stats from "../Pages/Stats/Stats";
 import FriendsDetails from "../Pages/FriendsDetails/FriendsDetails";
 
+
 export const router = createBrowserRouter([
+    
     {
         path: "/",
         element: <MainLayout />,
