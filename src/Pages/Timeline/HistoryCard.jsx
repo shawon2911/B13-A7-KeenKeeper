@@ -3,7 +3,7 @@ import { AiOutlineMessage } from 'react-icons/ai';
 import { BsCameraReelsFill } from 'react-icons/bs';
 import { IoIosCall } from 'react-icons/io';
 
-const HistoryCard = ({friend, length}) => {
+const HistoryCard = ({friend}) => {
     // console.log(friend);
     // console.log(selectedFriend);
     // console.log(length);
