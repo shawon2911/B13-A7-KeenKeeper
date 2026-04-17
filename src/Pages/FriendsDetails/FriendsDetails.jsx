@@ -32,7 +32,7 @@ const FriendsDetails = () => {
   };
   
   if(loading || !targetFriends){
-    return <p>Loading</p>
+    return <div className="min-h-[50vh] flex justify-center items-center"><span className="loading loading-spinner text-accent"></span></div>
   }
   
   const {
