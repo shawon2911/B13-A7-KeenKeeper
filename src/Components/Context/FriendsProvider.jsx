@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { toast } from 'react-toastify';
 
 
 
@@ -12,6 +13,15 @@ const FriendsProvider = ({children}) => {
 
     const handleCommunication = (target,type) => {
         // console.log(target,type, "clicked");
+        if(type === "call"){
+            toast.success(`You contacted ${target.name} via Call`);
+        }
+        else if(type === "text"){
+            toast.success(`You contacted ${target.name} via Text`);
+        }
+        else if(type === "video"){
+            toast.success(`You contacted ${target.name} via Video`);
+        }
 
 
         const updatedfriend = {
