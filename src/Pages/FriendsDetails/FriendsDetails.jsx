@@ -51,7 +51,7 @@ const FriendsDetails = () => {
                 </span>
               ))}
             </span>
-            <p className="font-medium text-[16px] text-[#64748B]">"{bio}"</p>
+            <p className="font-medium text-[16px] text-[#64748B] px-3 md:px-0 ml-2 md:ml-0">"{bio}"</p>
             <p className="text-[14px] text-[#64748B]">Prefered : {email}</p>
           </div>
           <div className="flex justify-center items-center gap-3 bg-white shadow-md rounded py-3  font-medium text-[16px] text-[#1F2937]">
