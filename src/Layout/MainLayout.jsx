@@ -10,7 +10,7 @@ const MainLayout = () => {
             <Navbar />
             <ScrollTop />
             <Outlet />
-            {/* <Footer /> */}
+            <Footer />
         </div>
     );
 };
