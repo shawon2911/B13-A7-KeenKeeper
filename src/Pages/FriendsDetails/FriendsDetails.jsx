@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BiBellMinus } from "react-icons/bi";
 import { BsArchive } from "react-icons/bs";
 import { FiPhoneCall } from "react-icons/fi";
@@ -11,11 +11,30 @@ const FriendsDetails = () => {
   const { id } = useParams();
   // console.log(id);
   const friends = useLoaderData();
+  const [myFriends, setMyfriends] = useState([]);
+  const [loading , setLoading] = useState(true);
+  useEffect(()=> {
+    setTimeout(() => {
+      setMyfriends(friends);
+      setLoading(false);
+    }, 1000);
+  }, [])
   // console.log(friends);
-  const targetFriends = friends.find((friend) => friend.id == id);
+  const targetFriends = myFriends.find((friend) => friend.id == id);
   // console.log(targetFriends);
   const {handleCommunication} = useContext(FriendsContext);
 
+  
+  const statusClassObj = {
+    "on-track"    : "bg-green-800 px-3 rounded-full text-white",
+    "almost due"  : "bg-[#EFAD44] px-3 rounded-full text-white",
+    "overdue"     : "bg-[#EF4444] px-3 rounded-full text-white",
+  };
+  
+  if(loading || !targetFriends){
+    return <p>Loading</p>
+  }
+  
   const {
     name,
     picture,
@@ -27,14 +46,6 @@ const FriendsDetails = () => {
     goal,
     next_due_date,
   } = targetFriends;
-
-  const statusClassObj = {
-    "on-track": "bg-green-800 px-3 rounded-full text-white",
-    "almost due": "bg-[#EFAD44] px-3 rounded-full text-white",
-    overdue: "bg-[#EF4444] px-3 rounded-full text-white",
-  };
-
-
 
   return (
     <div className="bg-[#F8FAFC]">

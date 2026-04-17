@@ -8,6 +8,7 @@ export const FriendsContext = createContext();
 const FriendsProvider = ({children}) => {
     const [communication, setCommunication] = useState("");
     const [selectedFriend, setSelectedFriend] = useState([]);
+
     // const [communicationHistory, setCommunicationHistory] = useState([]);
     
 
@@ -35,6 +36,7 @@ const FriendsProvider = ({children}) => {
         }
         // setCommunication(type);
         setSelectedFriend(prev => [...prev, updatedfriend]);
+        console.log("selected", selectedFriend);
         
         // const newEntry = {
         //     friend : selectedFriend.name,

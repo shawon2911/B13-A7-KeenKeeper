@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FriendsContext } from "../../Components/Context/FriendsProvider";
 import HistoryCard from "./HistoryCard";
 import { IoIosArrowDown } from "react-icons/io";
@@ -7,17 +7,27 @@ const Timeline = () => {
   const { selectedFriend } = useContext(FriendsContext);
   // console.log(selectedFriend );
   const [sortingType, setSortingType] = useState("");
-  let filteredFriend = selectedFriend;
+  const [filteredFriend, setFilteredFriend] = useState(selectedFriend);
+//   let filteredFriend = selectedFriend;
 
-  if(sortingType === "call"){
-    filteredFriend = selectedFriend.filter(c => c.type === "call");
+   useEffect(() => {
+  if (sortingType === "call") {
+    setFilteredFriend([]);
+    setFilteredFriend(selectedFriend.filter(c => c.type === "call"));
+  } else if (sortingType === "text") {
+    setFilteredFriend([]);
+    setFilteredFriend(selectedFriend.filter(t => t.type === "text"));
+  } else if (sortingType === "video") {
+    setFilteredFriend([]);
+    setFilteredFriend(selectedFriend.filter(v => v.type === "video"));
+  } else {
+    setFilteredFriend([]);
+    setFilteredFriend(selectedFriend);
   }
-  else if(sortingType === "text"){
-    filteredFriend = selectedFriend.filter(t => t.type === "text");
-  }
-  if(sortingType === "video"){
-    filteredFriend = selectedFriend.filter(v => v.type === "video");
-  }
+  console.log(filteredFriend);
+}, [sortingType, selectedFriend])
+  
+ 
 
   return (
     <div className="bg-[#F8FAFC] min-h-screen">
@@ -56,8 +66,8 @@ const Timeline = () => {
             No Communication History Found
           </h2>
         ) : (
-          filteredFriend.map((friend) => (
-            <HistoryCard key={friend.id} friend={friend} ></HistoryCard>
+          filteredFriend.map((friend,index) => (
+            <HistoryCard key={index} friend={friend} ></HistoryCard>
           ))
         )}
       </div>

@@ -5,7 +5,7 @@ import { IoIosCall } from 'react-icons/io';
 import { FriendsContext } from '../../Components/Context/FriendsProvider';
 
 const HistoryCard = ({friend}) => {
-    // console.log(friend);
+    console.log(friend);
     // console.log(length);
     
     
@@ -18,7 +18,8 @@ const HistoryCard = ({friend}) => {
         <div className='bg-white flex justify-start items-center gap-5 mt-7 py-3 px-6 rounded-sm shadow-md'>
         <div>
             {
-              (friend.type === "call" ? <IoIosCall className='text-3xl font-' /> : friend.type === "text" ? <AiOutlineMessage className='text-3xl font-' /> : <BsCameraReelsFill className='text-3xl font-' />)
+              (friend.type === "call" ? <IoIosCall className='text-3xl font-' /> : friend.type === "text" ? <AiOutlineMessage className='text-3xl font-' />
+                 : <BsCameraReelsFill className='text-3xl font-' />)
             }
         </div>
 
