@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiOutlineMessage } from 'react-icons/ai';
 import { BsCameraReelsFill } from 'react-icons/bs';
 import { IoIosCall } from 'react-icons/io';
+import { FriendsContext } from '../../Components/Context/FriendsProvider';
 
 const HistoryCard = ({friend}) => {
     // console.log(friend);
-    // console.log(selectedFriend);
     // console.log(length);
+    
+    
+   
+    
     
     
     
