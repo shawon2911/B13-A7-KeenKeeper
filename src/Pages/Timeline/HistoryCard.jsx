@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { AiOutlineMessage } from 'react-icons/ai';
 import { BsCameraReelsFill } from 'react-icons/bs';
 import { IoIosCall } from 'react-icons/io';
